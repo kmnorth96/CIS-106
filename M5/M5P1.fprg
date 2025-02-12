@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-11 06:55:42 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVYzQjZJUU87MjAyNS0wMi0xMTswNjozNzoxNyBQTTszMzQ2"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVYzQjZJUU87MjAyNS0wMi0xMTswNjo1NTo0MiBQTTsxOzM0NTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantity, price, tax, extPrice, total" type="Real" array="False" size=""/>
+            <input variable="quantity"/>
+            <if expression="quantity &gt;= 1000">
+                <then>
+                    <assign variable="price" expression="3"/>
+                </then>
+                <else>
+                    <assign variable="price" expression="5"/>
+                </else>
+            </if>
+            <assign variable="extPrice" expression="quantity * price"/>
+            <assign variable="tax" expression="extPrice * (7 / 100)"/>
+            <assign variable="total" expression="extPrice + tax"/>
+            <output expression="&quot;Quantity: &quot; &amp;quantity&amp; ToChar(13)&amp;&#13;&#10;&quot;Price: &quot;&amp;price&amp; ToChar(13)&amp;&#13;&#10;&quot;Extended Price: &quot; &amp;extPrice&amp; ToChar(13)&amp;&#13;&#10;&quot;Tax: &quot; &amp;tax&amp; ToChar(13)&amp;&#13;&#10;&quot;Total: &quot; &amp;total" newline="False"/>
+        </body>
+    </function>
+</flowgorithm>

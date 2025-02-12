@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-11 07:29:01 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVYzQjZJUU87MjAyNS0wMi0xMTswNjo1ODowMiBQTTszMzQz"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVYzQjZJUU87MjAyNS0wMi0xMTswNzoyOTowMSBQTTsyOzM0NTA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantity" type="Real" array="False" size=""/>
+            <declare name="cost" type="Real" array="False" size=""/>
+            <declare name="shipping" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="quantity"/>
+            <input variable="cost"/>
+            <assign variable="total" expression="cost * quantity"/>
+            <if expression="cost * quantity &gt; 50">
+                <then>
+                    <assign variable="shipping" expression="0"/>
+                </then>
+                <else>
+                    <assign variable="shipping" expression="25"/>
+                </else>
+            </if>
+            <assign variable="total" expression="total + shipping"/>
+            <output expression="&quot;Order Total: $&quot; &amp;total&amp; ToChar(13)&amp;&#13;&#10;&quot;Shipping: $&quot; &amp;shipping" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

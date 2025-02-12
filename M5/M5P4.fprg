@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-11 08:03:31 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVYzQjZJUU87MjAyNS0wMi0xMTswNjo1ODowMiBQTTszMzQz"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVYzQjZJUU87MjAyNS0wMi0xMTswODowMzozMSBQTTszOzM0NDc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="cost" type="Real" array="False" size=""/>
+            <declare name="warranty" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="name"/>
+            <input variable="cost"/>
+            <if expression="cost &gt; 1000">
+                <then>
+                    <assign variable="warranty" expression="cost * (10 / 100)"/>
+                </then>
+                <else>
+                    <assign variable="warranty" expression="cost * (5 / 100)"/>
+                </else>
+            </if>
+            <assign variable="total" expression="(cost + warranty)"/>
+            <output expression="&quot;Product Name: &quot; &amp;name&amp; ToChar(13)&amp;&#13;&#10;&quot;Cost: $&quot; &amp;cost&amp; ToChar(13)&amp;&#13;&#10;&quot;Warranty: $&quot; &amp;warranty&amp; ToChar(13)&amp;&#13;&#10;&quot;Total Cost: $&quot; &amp;total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
