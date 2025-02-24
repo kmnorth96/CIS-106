@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-23 03:05:07 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVVBUUxIOEc7MjAyNS0wMi0yMzswMTozMzoxMiBQTTszMzUx"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVVBUUxIOEc7MjAyNS0wMi0yMzswMzowNTowNyBQTTs0OzM0Njc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="concertTickets" type="Real" array="False" size=""/>
+            <declare name="ticketPrice" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <input variable="concertTickets"/>
+            <if expression="concertTickets &gt;= 25">
+                <then>
+                    <assign variable="ticketPrice" expression="50"/>
+                </then>
+                <else>
+                    <if expression="concertTickets &gt;=10 and concertTickets &lt; 25">
+                        <then>
+                            <assign variable="ticketPrice" expression="60"/>
+                        </then>
+                        <else>
+                            <if expression="concertTickets &gt;= 5 and concertTickets &lt; 10">
+                                <then>
+                                    <assign variable="ticketPrice" expression="70"/>
+                                </then>
+                                <else>
+                                    <assign variable="ticketPrice" expression="75"/>
+                                </else>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+            <assign variable="total" expression="ticketPrice * concertTickets"/>
+            <output expression="concertTickets &amp; ToChar(13) &amp; ticketPrice &amp; ToChar(13) &amp; total" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
