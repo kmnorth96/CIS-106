@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2025-02-25 04:36:00 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLU1PNEVCVUc7MjAyNS0wMi0yNTswMzo0MjoyNSBQTTszMzUy"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLU1PNEVCVUc7MjAyNS0wMi0yNTswNDozNjowMCBQTTs1OzM0NjE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="answer" type="String" array="False" size=""/>
+            <declare name="discountSum" type="Real" array="False" size=""/>
+            <assign variable="discountSum" expression="0"/>
+            <declare name="quantity" type="Real" array="False" size=""/>
+            <declare name="price" type="Real" array="False" size=""/>
+            <declare name="extendedPrice" type="Real" array="False" size=""/>
+            <declare name="finalPrice" type="Real" array="False" size=""/>
+            <declare name="discount" type="Real" array="False" size=""/>
+            <input variable="answer"/>
+            <if expression="answer = &quot;Yes&quot;">
+                <then>
+                    <while expression="answer == &quot;Yes&quot;">
+                        <input variable="quantity"/>
+                        <input variable="price"/>
+                        <assign variable="extendedPrice" expression="quantity * price"/>
+                        <if expression="extendedPrice &gt; 10000">
+                            <then>
+                                <assign variable="discount" expression="extendedPrice * (25 / 100)"/>
+                                <assign variable="finalPrice" expression="extendedPrice - discount"/>
+                            </then>
+                            <else>
+                                <assign variable="discount" expression="extendedPrice * (10 / 100)"/>
+                                <assign variable="finalPrice" expression="extendedPrice - discount"/>
+                            </else>
+                        </if>
+                        <assign variable="discountSum" expression="discountSum + discount"/>
+                        <output expression="&quot;Extended Price: &quot; &amp; extendedPrice &amp; ToChar(13) &amp; &quot; Discount Amount: &quot; &amp; discount &amp; ToChar(13) &amp; &quot; Final Price: &quot; &amp; finalPrice" newline="True"/>
+                        <input variable="answer"/>
+                    </while>
+                    <output expression="&quot;Sum of discounts: &quot; &amp; discountSum" newline="True"/>
+                </then>
+                <else>
+                    <output expression="&quot;Goodbye&quot;" newline="True"/>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
